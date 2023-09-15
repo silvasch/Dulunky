@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://b1khv5udypw3k"]
+
+[ext_resource type="PackedScene" uid="uid://cn43ntmpkw8xx" path="res://scenes/player.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://dd3i584axs41x" path="res://scenes/dropped_item.tscn" id="2_etq6g"]
+[ext_resource type="PackedScene" uid="uid://bhgp5xw2e741q" path="res://scenes/weapons/ak_47/ak_47.tscn" id="3_rlvwo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0nfcq"]
+
+[node name="PlayerTestScene" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1")]
+position = Vector2(386, 153)
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2(576, 648)
+scale = Vector2(58, 2)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+shape = SubResource("RectangleShape2D_0nfcq")
+
+[node name="AK 47" parent="." instance=ExtResource("2_etq6g")]
+position = Vector2(571, 87)
+item_scene = ExtResource("3_rlvwo")

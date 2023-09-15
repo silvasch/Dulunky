@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://p3w83jojl2ba"]
+
+[ext_resource type="Script" path="res://addons/guns/gun.gd" id="1_l2ntb"]
+[ext_resource type="Texture2D" uid="uid://cf6fn1wqluefs" path="res://assets/weapons/pistol/pistol.png" id="2_waigi"]
+
+[node name="Pistol" type="Node2D"]
+script = ExtResource("1_l2ntb")
+reload_time = 1.5
+bullets_per_magazin = 6
+magazines_included = 1
+texture = ExtResource("2_waigi")
