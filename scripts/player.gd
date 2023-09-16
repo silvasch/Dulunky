@@ -45,7 +45,7 @@ func _process(delta):
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = -(jump * delta * 100)
 
-	if Input.is_action_pressed("shoot") and gun != null:
+	if Input.is_action_pressed("shoot") and gun:
 		gun.shoot()
 		if gun.is_empty():
 			var last_index = gun_index
@@ -54,7 +54,7 @@ func _process(delta):
 			switch_gun()
 			Input.action_release("shoot")
 		
-	if Input.is_action_just_pressed("reload") and gun != null:
+	if Input.is_action_just_pressed("reload") and gun:
 		gun.start_reloading()
 
 	if Input.is_action_just_pressed("next_weapon"):
@@ -66,7 +66,7 @@ func _process(delta):
 		switch_gun()
 
 	if Input.is_action_just_pressed("interact"):
-		if item_in_range != null:
+		if item_in_range:
 			item_in_range.remove_child(item_in_range.item)
 			gun_inventory.push_back(item_in_range.item)
 			item_in_range.queue_free()
@@ -77,7 +77,7 @@ func _process(delta):
 	
 	
 func gun_positioning():
-	if gun == null:
+	if not gun:
 		return
 	
 	if not is_using_mouse:

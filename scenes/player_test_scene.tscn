@@ -9,7 +9,7 @@
 [node name="PlayerTestScene" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1")]
-position = Vector2(386, 153)
+position = Vector2(467, 525)
 
 [node name="Ground" type="StaticBody2D" parent="."]
 position = Vector2(576, 648)
@@ -20,5 +20,5 @@ collision_layer = 2
 shape = SubResource("RectangleShape2D_0nfcq")
 
 [node name="AK 47" parent="." instance=ExtResource("2_etq6g")]
-position = Vector2(571, 87)
+position = Vector2(60, 580)
 item_scene = ExtResource("3_rlvwo")

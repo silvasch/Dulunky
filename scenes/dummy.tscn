@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://b74h6j86cdudy"]
+
+[ext_resource type="Script" path="res://addons/health/health_node.gd" id="1_b1t5n"]
+[ext_resource type="Texture2D" uid="uid://sts6ejoyd6y5" path="res://icon.png" id="2_ik7t5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_687m5"]
+size = Vector2(64, 64)
+
+[node name="Dummy" type="RigidBody2D"]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_687m5")
+
+[node name="Health" type="Node" parent="."]
+script = ExtResource("1_b1t5n")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ik7t5")
